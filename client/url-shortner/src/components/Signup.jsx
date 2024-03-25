@@ -22,7 +22,7 @@ function Signup() {
 
     const handleSubmit = async () => {
         try {
-            const res = await fetch('http://localhost:8001/user/signup', {
+            const res = await fetch('https://url-shortner-2ozn.onrender.com/user/signup', {
                 method: 'POST',
                 headers: {
                     "Content-Type": "application/json"

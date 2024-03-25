@@ -17,7 +17,7 @@ function Login() {
 
     const handleSubmit = async () => {
         try {
-            const res = await fetch('http://localhost:8001/user/login', {
+            const res = await fetch('https://url-shortner-2ozn.onrender.com/user/login', {
                 withCredentials: true,
                 method: 'POST',
                 headers: {

@@ -17,7 +17,7 @@ function Form() {
 
     const handleSubmit = async () => {
         try {
-            const res = await fetch("http://localhost:8001/url", {
+            const res = await fetch("https://url-shortner-2ozn.onrender.com/url", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -43,7 +43,7 @@ function Form() {
             const id = data.id;
             setResult(id);
             setShortID(id);
-            setShorturl(`http://localhost:8001/url/${id}`);
+            setShorturl(`https://url-shortner-2ozn.onrender.com/url/${id}`);
 
         } catch (error) {
             console.error('Error:', error);
@@ -51,7 +51,7 @@ function Form() {
     };
 
     // const handleRedirect = async () => {
-    //     window.location.href = `http://localhost:8001/url/${shortID}`
+    //     window.location.href = `https://url-shortner-2ozn.onrender.com/url/${shortID}`
     // };
 
 
