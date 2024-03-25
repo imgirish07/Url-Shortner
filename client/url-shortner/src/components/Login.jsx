@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import {useNavigate} from "react-router-dom"
 function Login() {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
     const handleEmail = (e) => {
         const value = e.target.value
@@ -32,7 +34,8 @@ function Login() {
             const data = await res.json();
             const boolValue = data.boolValue;
             if (boolValue) {
-                window.location.href = `http://localhost:3000`;
+                // window.location.href = `http://localhost:3000`;
+                navigate("/")
             }
 
         } catch (error) {

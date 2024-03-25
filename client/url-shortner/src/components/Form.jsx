@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 function Form() {
     const [result, setResult] = useState('');
     const [url, setUrl] = useState('');
     const [shortID, setShortID] = useState('');
     const [shorturl, setShorturl] = useState('');
+    const navigate = useNavigate();
 
     const handleChangeUrl = (e) => {
         setUrl(e.target.value);
@@ -54,7 +56,8 @@ function Form() {
 
 
     const handleredirectTOSignup = async () => {
-        window.location.href = `http://localhost:3000/user/signup`
+        // window.location.href = `http://localhost:3000/user/signup`
+        navigate("/user/signup")
     };
 
     function handleCopy() {

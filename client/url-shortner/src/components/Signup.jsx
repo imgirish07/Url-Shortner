@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
+import {useNavigate} from "react-router-dom"
 
 function Signup() {
     const [userName, setuserName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
     const handleUserName = (e) => {
         const value = e.target.value
@@ -37,7 +39,8 @@ function Signup() {
             console.log("Sign Up Data", data);
             const boolValue = data.boolValue;
             if (boolValue) {
-                window.location.href = `http://localhost:3000/user/login`;
+                // window.location.href = `http://localhost:3000/user/login`;
+                navigate("/user/login");
             }
 
         } catch (error) {
