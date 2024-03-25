@@ -33,8 +33,11 @@ function Login() {
             //     credentials: 'include',
             // });
             const res = await axios.post("https://url-shortner-2ozn.onrender.com/user/login",{
+                // const res = await axios.post("http://localhost:8000/user/login",{
                 email: email,
                 password: password
+            },{
+                withCredentials: true
             })
             const data = res.data;
             const boolValue = data.boolValue;

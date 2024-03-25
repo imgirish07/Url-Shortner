@@ -18,7 +18,7 @@ function Form() {
 
     const handleSubmit = async () => {
         try {
-            // const res = await fetch("https://url-shortner-2ozn.onrender.com/url", {
+            // const res = await fetch("http://localhost:8000/url", {
             //     method: "POST",
             //     headers: {
             //         "Content-Type": "application/json"
@@ -31,14 +31,17 @@ function Form() {
             // });
 
             const res = await axios.post("https://url-shortner-2ozn.onrender.com/url",{
+                // const res = await axios.post("http://localhost:8000/url",{
                 url: url
+            },{
+                withCredentials:true,
             })
 
             // if (!res.ok) {
             //     throw new Error('Failed to fetch');
             // }
 
-            // const contentType = res.headers.get('content-type');
+            // const contentType = res.headers['Content-Type'];
             // if (!contentType || !contentType.includes('application/json')) {
             //     console.log('Response was not JSON');
             //     throw new Error('Response was not JSON');

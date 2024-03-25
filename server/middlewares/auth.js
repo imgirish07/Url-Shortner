@@ -3,7 +3,7 @@ const { getUser } = require('../service/auth');
 async function restrictToLoggedinUserOnly( req, res, next) {
 
     const token = req.cookies.uid;
-    // console.log("userUid  in middleware auth: ", token);
+    console.log("userUid  in middleware auth: ", req.cookies["uid"]);
 
     if(!token){
         return res.status(404).json({msg: "Login falied due to wrong token"});
