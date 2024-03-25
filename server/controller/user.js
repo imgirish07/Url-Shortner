@@ -78,6 +78,7 @@ async function handleUserlogin(req, res) {
         const jwtToken = setUser(user);
         // // using cookies t store the token
         res.cookie("uid", jwtToken, { path: "/" });
+        res.setHeader('Access-Control-Allow-Credentials',true);
         return res.status(200).json({ msg: 'Login Successful', boolValue: true });
     }
 
