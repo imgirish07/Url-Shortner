@@ -15,7 +15,7 @@ const app = express();
 
 // Middlewares
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: '*',
 	credentials: true
 }));
 app.use(express.json());
@@ -30,3 +30,5 @@ const PORT = process.env.PORT;
 app.listen(PORT, () => {
     console.log(`Server Started at PORT ${PORT}`);
 })
+
+module.exports = app;
