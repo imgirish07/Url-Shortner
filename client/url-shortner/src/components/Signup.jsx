@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useState } from 'react'
 import {Link, useNavigate} from "react-router-dom"
 
@@ -22,20 +23,25 @@ function Signup() {
 
     const handleSubmit = async () => {
         try {
-            const res = await fetch('https://url-shortner-2ozn.onrender.com/user/signup', {
-                method: 'POST',
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    userName: userName,
-                    email: email,
-                    password: password
-                }),
-                mode: 'cors',
-                credentials: 'include',
-            });
-            const data = await res.json();
+            // const res = await fetch('https://url-shortner-2ozn.onrender.com/user/signup', {
+            //     method: 'POST',
+            //     headers: {
+            //         "Content-Type": "application/json"
+            //     },
+            //     body: JSON.stringify({
+            //         userName: userName,
+            //         email: email,
+            //         password: password
+            //     }),
+            //     mode: 'cors',
+            //     credentials: 'include',
+            // });
+            const res = await axios.post("https://url-shortner-2ozn.onrender.com/user/signup",{
+                userName: userName,
+                email: email,
+                password: password
+            })
+            const data = res.data;
             console.log("Sign Up Data", data);
             const boolValue = data.boolValue;
             if (boolValue) {

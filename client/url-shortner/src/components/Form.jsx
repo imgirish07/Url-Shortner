@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 function Form() {
     const [result, setResult] = useState('');
     const [url, setUrl] = useState('');
@@ -17,29 +18,33 @@ function Form() {
 
     const handleSubmit = async () => {
         try {
-            const res = await fetch("https://url-shortner-2ozn.onrender.com/url", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    url: url
-                }),
-                mode: "cors",
-                credentials: "include"
-            });
+            // const res = await fetch("https://url-shortner-2ozn.onrender.com/url", {
+            //     method: "POST",
+            //     headers: {
+            //         "Content-Type": "application/json"
+            //     },
+            //     body: JSON.stringify({
+            //         url: url
+            //     }),
+            //     mode: "cors",
+            //     credentials: "include"
+            // });
 
-            if (!res.ok) {
-                throw new Error('Failed to fetch');
-            }
+            const res = await axios.post("https://url-shortner-2ozn.onrender.com/url",{
+                url: url
+            })
 
-            const contentType = res.headers.get('content-type');
-            if (!contentType || !contentType.includes('application/json')) {
-                console.log('Response was not JSON');
-                throw new Error('Response was not JSON');
-            }
+            // if (!res.ok) {
+            //     throw new Error('Failed to fetch');
+            // }
 
-            const data = await res.json();
+            // const contentType = res.headers.get('content-type');
+            // if (!contentType || !contentType.includes('application/json')) {
+            //     console.log('Response was not JSON');
+            //     throw new Error('Response was not JSON');
+            // }
+
+            const data = res.data;
             const id = data.id;
             setResult(id);
             setShortID(id);
