@@ -24,6 +24,9 @@ app.use(express.urlencoded({extended:false}));
 app.use(cookieParser());
 app.use('/url',restrictToLoggedinUserOnly, urlRoute);
 app.use('/user',userRoute);
+app.route('/',(req, res) => {
+    res.json({status: "fit"})
+})
 
 
 const PORT = process.env.PORT;
