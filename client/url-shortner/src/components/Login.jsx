@@ -33,7 +33,6 @@ function Login() {
             //     credentials: 'include',
             // });
             const res = await axios.post("https://url-shortner-2ozn.onrender.com/user/login",{
-                // const res = await axios.post("http://localhost:8000/user/login",{
                 email: email,
                 password: password
             },{
@@ -42,7 +41,6 @@ function Login() {
             const data = res.data;
             const boolValue = data.boolValue;
             if (boolValue) {
-                // window.location.href = `http://localhost:3000`;
                 navigate("/")
             }
 

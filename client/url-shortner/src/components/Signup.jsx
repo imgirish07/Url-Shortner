@@ -45,7 +45,6 @@ function Signup() {
             console.log("Sign Up Data", data);
             const boolValue = data.boolValue;
             if (boolValue) {
-                // window.location.href = `http://localhost:3000/user/login`;
                 navigate("/user/login");
             }
 
