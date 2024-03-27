@@ -23,7 +23,7 @@ function Signup() {
 
     const handleSubmit = async () => {
         try {
-            // const res = await fetch('https://url-shortner-2ozn.onrender.com/user/signup', {
+            // const res = await fetch('stbe.vercel.app/user/signup', {
             //     method: 'POST',
             //     headers: {
             //         "Content-Type": "application/json"
@@ -36,7 +36,7 @@ function Signup() {
             //     mode: 'cors',
             //     credentials: 'include',
             // });
-            const res = await axios.post("https://url-shortner-2ozn.onrender.com/user/signup",{
+            const res = await axios.post("stbe.vercel.app/user/signup",{
                 userName: userName,
                 email: email,
                 password: password

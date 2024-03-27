@@ -30,7 +30,7 @@ function Form() {
             //     credentials: "include"
             // });
 
-            const res = await axios.post("https://url-shortner-2ozn.onrender.com/url",{
+            const res = await axios.post("stbe.vercel.app/url",{
                 url: url
             },{
                 withCredentials:true,
@@ -40,7 +40,7 @@ function Form() {
             const id = data.id;
             setResult(id);
             setShortID(id);
-            setShorturl(`https://url-shortner-2ozn.onrender.com/url/${id}`);
+            setShorturl(`stbe.vercel.app/url/${id}`);
 
         } catch (error) {
             console.error('Error:', error);
@@ -48,7 +48,7 @@ function Form() {
     };
 
     // const handleRedirect = async () => {
-    //     window.location.href = `https://url-shortner-2ozn.onrender.com/url/${shortID}`
+    //     window.location.href = `stbe.vercel.app/url/${shortID}`
     // };
 
 
