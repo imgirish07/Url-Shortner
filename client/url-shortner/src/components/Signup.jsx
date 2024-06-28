@@ -23,19 +23,6 @@ function Signup() {
 
     const handleSubmit = async () => {
         try {
-            // const res = await fetch('https://url-shortner-2ozn.onrender.com/user/signup', {
-            //     method: 'POST',
-            //     headers: {
-            //         "Content-Type": "application/json"
-            //     },
-            //     body: JSON.stringify({
-            //         userName: userName,
-            //         email: email,
-            //         password: password
-            //     }),
-            //     mode: 'cors',
-            //     credentials: 'include',
-            // });
             const res = await axios.post("https://url-shortner-2ozn.onrender.com/user/signup",{
                 userName: userName,
                 email: email,
@@ -71,8 +58,7 @@ function Signup() {
                         <button type="submit" onClick={handleSubmit} style={{ width: '100%', padding: '10px', marginBottom: '10px', background: 'linear-gradient(to right, rgb(252, 92, 125), rgb(106, 130, 251))', color: '#fff', fontSize: '16px', fontWeight: 'bold', border: 'none', borderRadius: '5px', cursor: 'pointer', }}>Sign Up</button>
 
                         <p style={{ fontFamily: 'Arial, sans-serif', fontSize: '16px', color: '#333', marginBottom: '10px', textAlign: 'center', color: 'blueviolet' }}>
-                            Already a Member?
-                            {/* <a href="http://localhost:3000/user/login" style={{ color: '#E91E63', textDecoration: 'none', fontWeight: 'bold' }}>Login Here</a> */}
+                            Already a Member? 
                             <Link to={"/user/login"} style={{ color: '#E91E63', textDecoration: 'none', fontWeight: 'bold' }}>Login Here</Link>
                         </p>
 

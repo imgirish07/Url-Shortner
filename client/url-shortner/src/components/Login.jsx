@@ -18,20 +18,6 @@ function Login() {
 
     const handleSubmit = async () => {
         try {
-            // const res = await fetch('https://url-shortner-2ozn.onrender.com/user/login', {
-            //     withCredentials: true,
-            //     method: 'POST',
-            //     headers: {
-            //         'Access-Control-Allow-Origin': '*',
-            //         "Content-Type": "application/json"
-            //     },
-            //     body: JSON.stringify({
-            //         email: email,
-            //         password: password
-            //     }),
-            //     mode: 'cors',
-            //     credentials: 'include',
-            // });
             const res = await axios.post("https://url-shortner-2ozn.onrender.com/user/login",{
                 email: email,
                 password: password
@@ -48,7 +34,6 @@ function Login() {
             console.log("Error : ", error);
         }
     }
-
 
     return (
         <div>

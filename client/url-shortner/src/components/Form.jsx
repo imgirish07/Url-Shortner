@@ -18,18 +18,6 @@ function Form() {
 
     const handleSubmit = async () => {
         try {
-            // const res = await fetch("http://localhost:8000/url", {
-            //     method: "POST",
-            //     headers: {
-            //         "Content-Type": "application/json"
-            //     },
-            //     body: JSON.stringify({
-            //         url: url
-            //     }),
-            //     mode: "cors",
-            //     credentials: "include"
-            // });
-
             const res = await axios.post("https://url-shortner-2ozn.onrender.com/url",{
                 url: url
             },{
@@ -46,12 +34,6 @@ function Form() {
             console.error('Error:', error);
         }
     };
-
-    // const handleRedirect = async () => {
-    //     window.location.href = `https://url-shortner-2ozn.onrender.com/url/${shortID}`
-    // };
-
-
     const handleredirectTOSignup = async () => {
         navigate("/user/signup")
     };
@@ -59,7 +41,6 @@ function Form() {
     function handleCopy() {
         navigator.clipboard.writeText(shorturl);
     }
-
 
     return (
         <>
