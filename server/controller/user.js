@@ -21,18 +21,18 @@ async function handleUserSignup(req, res) {
 
     //validate the email if it is in correct format
     const validEmailBool = validateEmail(email);
-    if(!validEmailBool){
-        return res.status(400).json({message:"invalid format of email"});
+    if (!validEmailBool) {
+        return res.status(400).json({ message: "invalid format of email" });
     }
 
     // set a encrypted password
     let x;
-    await bcrypt
-        .hash(password, 10)
-        .then(hashPassword => {
-            // x will store the resolved promise i.e the value of hashPassword
-            x = hashPassword;
-        })
+    await
+        bcrypt.hash(password, 10)
+            .then(hashPassword => {
+                // x will store the resolved promise i.e the value of hashPassword
+                x = hashPassword;
+            })
     const encryptedPassword = x;
 
     const user = await User.create({
@@ -78,7 +78,7 @@ async function handleUserlogin(req, res) {
         const jwtToken = setUser(user);
         // // using cookies t store the token
         res.cookie("uid", jwtToken, { path: "/", sameSite: 'none', secure: true });
-        res.setHeader('Access-Control-Allow-Credentials',true);
+        res.setHeader('Access-Control-Allow-Credentials', true);
         return res.status(200).json({ msg: 'Login Successful', boolValue: true });
     }
 

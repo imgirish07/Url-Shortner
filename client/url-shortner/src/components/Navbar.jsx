@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import logo from './logo.png';
 
 export class Navbar extends Component {
     render() {
@@ -17,9 +16,7 @@ export class Navbar extends Component {
                         <Link to="/" style={{ fontSize: '1.5rem', textDecoration: 'none', color: 'rgb(0, 0, 0)' }}>
                             <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }} >
 
-                                <div style={{ display: 'flex', flexDirection: 'row', height: '24px', width: '50px', backgroundImage: `url(${logo})`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }} >
-                                </div>
-                                <div>URL</div>
+                                <div>SnipURL</div>
 
                             </div>
                         </Link>

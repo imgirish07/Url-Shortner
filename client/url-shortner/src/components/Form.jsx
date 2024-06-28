@@ -30,7 +30,7 @@ function Form() {
             //     credentials: "include"
             // });
 
-            const res = await axios.post("stbe.vercel.app/url",{
+            const res = await axios.post("https://url-shortner-2ozn.onrender.com/url",{
                 url: url
             },{
                 withCredentials:true,
@@ -40,7 +40,7 @@ function Form() {
             const id = data.id;
             setResult(id);
             setShortID(id);
-            setShorturl(`stbe.vercel.app/url/${id}`);
+            setShorturl(`https://url-shortner-2ozn.onrender.com/url/${id}`);
 
         } catch (error) {
             console.error('Error:', error);
@@ -48,7 +48,7 @@ function Form() {
     };
 
     // const handleRedirect = async () => {
-    //     window.location.href = `stbe.vercel.app/url/${shortID}`
+    //     window.location.href = `https://url-shortner-2ozn.onrender.com/url/${shortID}`
     // };
 
 
@@ -78,7 +78,7 @@ function Form() {
                         <h1 style={{ fontFamily: 'sans-serif', fontSize: '2.5rem', marginBottom: '20px', color: '#f35e84' }}> URL SHORTNER </h1>
                         <p style={{ fontSize: '1.2rem', marginBottom: '10px', textAlign: 'center', color: 'rgb(60 130 255)', fontFamily: 'sans-serif', }}> The easiest way to shrink long URLs into neat, manageable links. Simplify your online sharing with our service.</p>
 
-                        <h2 style={{ fontSize: '1.1rem', marginBottom: '20px' }}>Sign up for a free account and put URL SHORTENER to work</h2>
+                        <h2 style={{ fontSize: '1.1rem', marginBottom: '20px' }}>Sign up for a free account and put SnipURL to work</h2>
 
                         <button onClick={handleredirectTOSignup} style={{ width: '300px', padding: '10px', background: 'linear-gradient(to right, rgb(252, 92, 125), rgb(106, 130, 251))', color: '#fff', fontSize: '1.2rem', fontWeight: 'bold', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>Sign Up for free</button>
                     </div>
